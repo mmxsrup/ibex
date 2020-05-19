@@ -1,0 +1,855 @@
+Log file: /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/logs/build-2020-05-19-111953.log
+
+
+Supplied arguments
+==================
+--builddir            : bd
+--logdir              : logs
+--arch                : riscv32
+--chip                : speed-test
+--board               : ibex_ss_verilator
+--cc                  : riscv32-unknown-elf-gcc
+--ld                  : riscv32-unknown-elf-gcc
+--cflags              : None
+--ldflags             : None
+--cc-define1-pattern  : None
+--cc-define2-pattern  : None
+--cc-incdir-pattern   : None
+--cc-input-pattern    : None
+--cc-output-pattern   : None
+--ld-input-pattern    : None
+--ld-output-pattern   : None
+--user-libs           : None
+--dummy-libs          : None
+--cpu-mhz             : None
+--warmup-heat         : None
+--clean               : False
+--verbose             : True
+
+Benchmarks
+==========
+aha-mont64
+crc32
+cubic
+edn
+huffbench
+matmult-int
+minver
+nbody
+nettle-aes
+nettle-sha256
+nsichneu
+picojpeg
+qrduino
+sglib-combined
+slre
+st
+statemate
+ud
+wikisort
+
+Reading config /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/config/riscv32/arch.cfg
+Reading config /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/config/riscv32/chips/speed-test/chip.cfg
+Reading config /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/config/riscv32/boards/ibex_ss_verilator/board.cfg
+Global parameters
+=================
+rootdir              : /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot
+bd                   : /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd
+configdir            : /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/config
+bd_configdir         : /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/config
+archdir              : /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/config/riscv32
+bd_archdir           : /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/config/riscv32
+chipdir              : /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/config/riscv32/chips/speed-test
+bd_chipdir           : /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/config/riscv32/chips/speed-test
+boarddir             : /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/config/riscv32/boards/ibex_ss_verilator
+bd_boarddir          : /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/config/riscv32/boards/ibex_ss_verilator
+verbose              : True
+benchdir             : /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/src
+bd_benchdir          : /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/src
+supportdir           : /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/support
+bd_supportdir        : /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/support
+cflags               : ['-c', '-O2', '-march=rv32imc', '-mabi=ilp32', '-fdata-sections', '-ffunction-sections', '-nostartfiles', '-ffreestanding', '-mtune=sifive-3-series', '-I/home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/support', '-I/home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/config/riscv32/boards/ibex_ss_verilator', '-I/home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/config/riscv32/chips/speed-test', '-I/home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/config/riscv32', '-DCPU_MHZ=1', '-DWARMUP_HEAT=1']
+ldflags              : ['-O2', '-march=rv32imc', '-mabi=ilp32', '-Wl,-gc-sections', '-nostartfiles', '-ffreestanding', '-T/home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/config/riscv32/boards/ibex_ss_verilator/link.ld']
+cc                   : riscv32-unknown-elf-gcc
+cc_define1_pattern   : -D{0}
+cc_define2_pattern   : -D{0}={1}
+cc_incdir_pattern    : -I{0}
+cc_input_pattern     : {0}
+cc_output_pattern    : -o {0}
+ld_input_pattern     : {0}
+ld_output_pattern    : -o {0}
+user_libs            : ['/home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/config/riscv32/boards/ibex_ss_verilator/crt0.o', '/home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/config/riscv32/boards/ibex_ss_verilator/simple_system_common.o', '-lm']
+dummy_libs           : {}
+cpu_mhz              : 1
+warmup_heat          : 1
+post_process_cmd     : /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/config/riscv32/boards/ibex_ss_verilator/post_process_elf.sh
+ld                   : riscv32-unknown-elf-gcc
+
+General log
+===========
+Compiling beebsc from /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/support/beebsc.c to /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/support/beebsc.o
+/home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/support/beebsc.o up to date, skipping compile
+Compiling main from /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/support/main.c to /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/support/main.o
+/home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/support/main.o up to date, skipping compile
+Compiling chipsupport from /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/config/riscv32/chips/speed-test/chipsupport.c to /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/config/riscv32/chips/speed-test/chipsupport.o
+/home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/config/riscv32/chips/speed-test/chipsupport.o up to date, skipping compile
+Compiling boardsupport from /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/config/riscv32/boards/ibex_ss_verilator/boardsupport.c to /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/config/riscv32/boards/ibex_ss_verilator/boardsupport.o
+/home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/config/riscv32/boards/ibex_ss_verilator/boardsupport.o up to date, skipping compile
+Compilation of support files successful
+Compiling mont64 from /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/src/aha-mont64/mont64.c to /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/src/aha-mont64/mont64.o
+/home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/src/aha-mont64/mont64.o up to date, skipping compile
+Compilation of benchmark "aha-mont64" successful
+Linking /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/src/aha-mont64
+Binaries to link: mont64.o ,/home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/config/riscv32/chips/speed-test/chipsupport.o ,/home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/config/riscv32/boards/ibex_ss_verilator/boardsupport.o ,/home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/support/main.o ,/home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/support/beebsc.o
+Args to subprocess:
+	- riscv32-unknown-elf-gcc
+	- -O2
+	- -march=rv32imc
+	- -mabi=ilp32
+	- -Wl,-gc-sections
+	- -nostartfiles
+	- -ffreestanding
+	- -T/home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/config/riscv32/boards/ibex_ss_verilator/link.ld
+	- -o
+	- aha-mont64
+	- mont64.o
+	- /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/config/riscv32/chips/speed-test/chipsupport.o
+	- /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/config/riscv32/boards/ibex_ss_verilator/boardsupport.o
+	- /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/support/main.o
+	- /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/support/beebsc.o
+	- /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/config/riscv32/boards/ibex_ss_verilator/crt0.o
+	- /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/config/riscv32/boards/ibex_ss_verilator/simple_system_common.o
+	- -lm
+
+
+Linking of benchmark "aha-mont64" successful
+Post processing /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/src/aha-mont64/aha-mont64
+['/home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/config/riscv32/boards/ibex_ss_verilator/post_process_elf.sh', '/home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/src/aha-mont64/aha-mont64']
+Args to subprocess:
+	- /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/config/riscv32/boards/ibex_ss_verilator/post_process_elf.sh
+	- /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/src/aha-mont64/aha-mont64
+
++ riscv32-unknown-elf-objdump -fhSD /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/src/aha-mont64/aha-mont64
++ riscv32-unknown-elf-objcopy -O binary /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/src/aha-mont64/aha-mont64 /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/src/aha-mont64/aha-mont64.bin
++ srec_cat /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/src/aha-mont64/aha-mont64.bin -binary -offset 0x0000 -byte-swap 4 -o /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/src/aha-mont64/aha-mont64.vmem -vmem
+
+Post-process of benchmark "aha-mont64" successful
+aha-mont64
+Compiling crc_32 from /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/src/crc32/crc_32.c to /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/src/crc32/crc_32.o
+/home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/src/crc32/crc_32.o up to date, skipping compile
+Compilation of benchmark "crc32" successful
+Linking /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/src/crc32
+Binaries to link: crc_32.o ,/home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/config/riscv32/chips/speed-test/chipsupport.o ,/home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/config/riscv32/boards/ibex_ss_verilator/boardsupport.o ,/home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/support/main.o ,/home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/support/beebsc.o
+Args to subprocess:
+	- riscv32-unknown-elf-gcc
+	- -O2
+	- -march=rv32imc
+	- -mabi=ilp32
+	- -Wl,-gc-sections
+	- -nostartfiles
+	- -ffreestanding
+	- -T/home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/config/riscv32/boards/ibex_ss_verilator/link.ld
+	- -o
+	- crc32
+	- crc_32.o
+	- /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/config/riscv32/chips/speed-test/chipsupport.o
+	- /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/config/riscv32/boards/ibex_ss_verilator/boardsupport.o
+	- /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/support/main.o
+	- /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/support/beebsc.o
+	- /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/config/riscv32/boards/ibex_ss_verilator/crt0.o
+	- /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/config/riscv32/boards/ibex_ss_verilator/simple_system_common.o
+	- -lm
+
+
+Linking of benchmark "crc32" successful
+Post processing /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/src/crc32/crc32
+['/home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/config/riscv32/boards/ibex_ss_verilator/post_process_elf.sh', '/home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/src/crc32/crc32']
+Args to subprocess:
+	- /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/config/riscv32/boards/ibex_ss_verilator/post_process_elf.sh
+	- /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/src/crc32/crc32
+
++ riscv32-unknown-elf-objdump -fhSD /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/src/crc32/crc32
++ riscv32-unknown-elf-objcopy -O binary /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/src/crc32/crc32 /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/src/crc32/crc32.bin
++ srec_cat /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/src/crc32/crc32.bin -binary -offset 0x0000 -byte-swap 4 -o /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/src/crc32/crc32.vmem -vmem
+
+Post-process of benchmark "crc32" successful
+crc32
+Compiling basicmath_small from /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/src/cubic/basicmath_small.c to /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/src/cubic/basicmath_small.o
+/home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/src/cubic/basicmath_small.o up to date, skipping compile
+Compiling libcubic from /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/src/cubic/libcubic.c to /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/src/cubic/libcubic.o
+/home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/src/cubic/libcubic.o up to date, skipping compile
+Compilation of benchmark "cubic" successful
+Linking /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/src/cubic
+Binaries to link: libcubic.o ,basicmath_small.o ,/home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/config/riscv32/chips/speed-test/chipsupport.o ,/home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/config/riscv32/boards/ibex_ss_verilator/boardsupport.o ,/home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/support/main.o ,/home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/support/beebsc.o
+Args to subprocess:
+	- riscv32-unknown-elf-gcc
+	- -O2
+	- -march=rv32imc
+	- -mabi=ilp32
+	- -Wl,-gc-sections
+	- -nostartfiles
+	- -ffreestanding
+	- -T/home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/config/riscv32/boards/ibex_ss_verilator/link.ld
+	- -o
+	- cubic
+	- libcubic.o
+	- basicmath_small.o
+	- /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/config/riscv32/chips/speed-test/chipsupport.o
+	- /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/config/riscv32/boards/ibex_ss_verilator/boardsupport.o
+	- /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/support/main.o
+	- /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/support/beebsc.o
+	- /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/config/riscv32/boards/ibex_ss_verilator/crt0.o
+	- /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/config/riscv32/boards/ibex_ss_verilator/simple_system_common.o
+	- -lm
+
+
+Linking of benchmark "cubic" successful
+Post processing /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/src/cubic/cubic
+['/home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/config/riscv32/boards/ibex_ss_verilator/post_process_elf.sh', '/home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/src/cubic/cubic']
+Args to subprocess:
+	- /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/config/riscv32/boards/ibex_ss_verilator/post_process_elf.sh
+	- /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/src/cubic/cubic
+
++ riscv32-unknown-elf-objdump -fhSD /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/src/cubic/cubic
++ riscv32-unknown-elf-objcopy -O binary /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/src/cubic/cubic /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/src/cubic/cubic.bin
++ srec_cat /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/src/cubic/cubic.bin -binary -offset 0x0000 -byte-swap 4 -o /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/src/cubic/cubic.vmem -vmem
+
+Post-process of benchmark "cubic" successful
+cubic
+Compiling libedn from /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/src/edn/libedn.c to /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/src/edn/libedn.o
+/home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/src/edn/libedn.o up to date, skipping compile
+Compilation of benchmark "edn" successful
+Linking /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/src/edn
+Binaries to link: libedn.o ,/home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/config/riscv32/chips/speed-test/chipsupport.o ,/home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/config/riscv32/boards/ibex_ss_verilator/boardsupport.o ,/home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/support/main.o ,/home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/support/beebsc.o
+Args to subprocess:
+	- riscv32-unknown-elf-gcc
+	- -O2
+	- -march=rv32imc
+	- -mabi=ilp32
+	- -Wl,-gc-sections
+	- -nostartfiles
+	- -ffreestanding
+	- -T/home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/config/riscv32/boards/ibex_ss_verilator/link.ld
+	- -o
+	- edn
+	- libedn.o
+	- /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/config/riscv32/chips/speed-test/chipsupport.o
+	- /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/config/riscv32/boards/ibex_ss_verilator/boardsupport.o
+	- /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/support/main.o
+	- /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/support/beebsc.o
+	- /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/config/riscv32/boards/ibex_ss_verilator/crt0.o
+	- /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/config/riscv32/boards/ibex_ss_verilator/simple_system_common.o
+	- -lm
+
+
+Linking of benchmark "edn" successful
+Post processing /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/src/edn/edn
+['/home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/config/riscv32/boards/ibex_ss_verilator/post_process_elf.sh', '/home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/src/edn/edn']
+Args to subprocess:
+	- /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/config/riscv32/boards/ibex_ss_verilator/post_process_elf.sh
+	- /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/src/edn/edn
+
++ riscv32-unknown-elf-objdump -fhSD /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/src/edn/edn
++ riscv32-unknown-elf-objcopy -O binary /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/src/edn/edn /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/src/edn/edn.bin
++ srec_cat /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/src/edn/edn.bin -binary -offset 0x0000 -byte-swap 4 -o /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/src/edn/edn.vmem -vmem
+
+Post-process of benchmark "edn" successful
+edn
+Compiling libhuffbench from /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/src/huffbench/libhuffbench.c to /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/src/huffbench/libhuffbench.o
+/home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/src/huffbench/libhuffbench.o up to date, skipping compile
+Compilation of benchmark "huffbench" successful
+Linking /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/src/huffbench
+Binaries to link: libhuffbench.o ,/home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/config/riscv32/chips/speed-test/chipsupport.o ,/home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/config/riscv32/boards/ibex_ss_verilator/boardsupport.o ,/home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/support/main.o ,/home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/support/beebsc.o
+Args to subprocess:
+	- riscv32-unknown-elf-gcc
+	- -O2
+	- -march=rv32imc
+	- -mabi=ilp32
+	- -Wl,-gc-sections
+	- -nostartfiles
+	- -ffreestanding
+	- -T/home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/config/riscv32/boards/ibex_ss_verilator/link.ld
+	- -o
+	- huffbench
+	- libhuffbench.o
+	- /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/config/riscv32/chips/speed-test/chipsupport.o
+	- /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/config/riscv32/boards/ibex_ss_verilator/boardsupport.o
+	- /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/support/main.o
+	- /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/support/beebsc.o
+	- /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/config/riscv32/boards/ibex_ss_verilator/crt0.o
+	- /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/config/riscv32/boards/ibex_ss_verilator/simple_system_common.o
+	- -lm
+
+
+Linking of benchmark "huffbench" successful
+Post processing /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/src/huffbench/huffbench
+['/home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/config/riscv32/boards/ibex_ss_verilator/post_process_elf.sh', '/home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/src/huffbench/huffbench']
+Args to subprocess:
+	- /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/config/riscv32/boards/ibex_ss_verilator/post_process_elf.sh
+	- /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/src/huffbench/huffbench
+
++ riscv32-unknown-elf-objdump -fhSD /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/src/huffbench/huffbench
++ riscv32-unknown-elf-objcopy -O binary /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/src/huffbench/huffbench /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/src/huffbench/huffbench.bin
++ srec_cat /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/src/huffbench/huffbench.bin -binary -offset 0x0000 -byte-swap 4 -o /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/src/huffbench/huffbench.vmem -vmem
+
+Post-process of benchmark "huffbench" successful
+huffbench
+Compiling matmult-int from /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/src/matmult-int/matmult-int.c to /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/src/matmult-int/matmult-int.o
+/home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/src/matmult-int/matmult-int.o up to date, skipping compile
+Compilation of benchmark "matmult-int" successful
+Linking /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/src/matmult-int
+Binaries to link: matmult-int.o ,/home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/config/riscv32/chips/speed-test/chipsupport.o ,/home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/config/riscv32/boards/ibex_ss_verilator/boardsupport.o ,/home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/support/main.o ,/home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/support/beebsc.o
+Args to subprocess:
+	- riscv32-unknown-elf-gcc
+	- -O2
+	- -march=rv32imc
+	- -mabi=ilp32
+	- -Wl,-gc-sections
+	- -nostartfiles
+	- -ffreestanding
+	- -T/home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/config/riscv32/boards/ibex_ss_verilator/link.ld
+	- -o
+	- matmult-int
+	- matmult-int.o
+	- /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/config/riscv32/chips/speed-test/chipsupport.o
+	- /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/config/riscv32/boards/ibex_ss_verilator/boardsupport.o
+	- /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/support/main.o
+	- /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/support/beebsc.o
+	- /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/config/riscv32/boards/ibex_ss_verilator/crt0.o
+	- /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/config/riscv32/boards/ibex_ss_verilator/simple_system_common.o
+	- -lm
+
+
+Linking of benchmark "matmult-int" successful
+Post processing /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/src/matmult-int/matmult-int
+['/home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/config/riscv32/boards/ibex_ss_verilator/post_process_elf.sh', '/home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/src/matmult-int/matmult-int']
+Args to subprocess:
+	- /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/config/riscv32/boards/ibex_ss_verilator/post_process_elf.sh
+	- /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/src/matmult-int/matmult-int
+
++ riscv32-unknown-elf-objdump -fhSD /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/src/matmult-int/matmult-int
++ riscv32-unknown-elf-objcopy -O binary /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/src/matmult-int/matmult-int /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/src/matmult-int/matmult-int.bin
++ srec_cat /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/src/matmult-int/matmult-int.bin -binary -offset 0x0000 -byte-swap 4 -o /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/src/matmult-int/matmult-int.vmem -vmem
+
+Post-process of benchmark "matmult-int" successful
+matmult-int
+Compiling libminver from /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/src/minver/libminver.c to /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/src/minver/libminver.o
+/home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/src/minver/libminver.o up to date, skipping compile
+Compilation of benchmark "minver" successful
+Linking /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/src/minver
+Binaries to link: libminver.o ,/home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/config/riscv32/chips/speed-test/chipsupport.o ,/home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/config/riscv32/boards/ibex_ss_verilator/boardsupport.o ,/home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/support/main.o ,/home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/support/beebsc.o
+Args to subprocess:
+	- riscv32-unknown-elf-gcc
+	- -O2
+	- -march=rv32imc
+	- -mabi=ilp32
+	- -Wl,-gc-sections
+	- -nostartfiles
+	- -ffreestanding
+	- -T/home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/config/riscv32/boards/ibex_ss_verilator/link.ld
+	- -o
+	- minver
+	- libminver.o
+	- /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/config/riscv32/chips/speed-test/chipsupport.o
+	- /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/config/riscv32/boards/ibex_ss_verilator/boardsupport.o
+	- /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/support/main.o
+	- /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/support/beebsc.o
+	- /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/config/riscv32/boards/ibex_ss_verilator/crt0.o
+	- /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/config/riscv32/boards/ibex_ss_verilator/simple_system_common.o
+	- -lm
+
+
+Linking of benchmark "minver" successful
+Post processing /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/src/minver/minver
+['/home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/config/riscv32/boards/ibex_ss_verilator/post_process_elf.sh', '/home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/src/minver/minver']
+Args to subprocess:
+	- /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/config/riscv32/boards/ibex_ss_verilator/post_process_elf.sh
+	- /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/src/minver/minver
+
++ riscv32-unknown-elf-objdump -fhSD /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/src/minver/minver
++ riscv32-unknown-elf-objcopy -O binary /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/src/minver/minver /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/src/minver/minver.bin
++ srec_cat /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/src/minver/minver.bin -binary -offset 0x0000 -byte-swap 4 -o /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/src/minver/minver.vmem -vmem
+
+Post-process of benchmark "minver" successful
+minver
+Compiling nbody from /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/src/nbody/nbody.c to /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/src/nbody/nbody.o
+/home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/src/nbody/nbody.o up to date, skipping compile
+Compilation of benchmark "nbody" successful
+Linking /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/src/nbody
+Binaries to link: nbody.o ,/home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/config/riscv32/chips/speed-test/chipsupport.o ,/home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/config/riscv32/boards/ibex_ss_verilator/boardsupport.o ,/home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/support/main.o ,/home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/support/beebsc.o
+Args to subprocess:
+	- riscv32-unknown-elf-gcc
+	- -O2
+	- -march=rv32imc
+	- -mabi=ilp32
+	- -Wl,-gc-sections
+	- -nostartfiles
+	- -ffreestanding
+	- -T/home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/config/riscv32/boards/ibex_ss_verilator/link.ld
+	- -o
+	- nbody
+	- nbody.o
+	- /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/config/riscv32/chips/speed-test/chipsupport.o
+	- /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/config/riscv32/boards/ibex_ss_verilator/boardsupport.o
+	- /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/support/main.o
+	- /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/support/beebsc.o
+	- /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/config/riscv32/boards/ibex_ss_verilator/crt0.o
+	- /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/config/riscv32/boards/ibex_ss_verilator/simple_system_common.o
+	- -lm
+
+
+Linking of benchmark "nbody" successful
+Post processing /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/src/nbody/nbody
+['/home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/config/riscv32/boards/ibex_ss_verilator/post_process_elf.sh', '/home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/src/nbody/nbody']
+Args to subprocess:
+	- /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/config/riscv32/boards/ibex_ss_verilator/post_process_elf.sh
+	- /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/src/nbody/nbody
+
++ riscv32-unknown-elf-objdump -fhSD /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/src/nbody/nbody
++ riscv32-unknown-elf-objcopy -O binary /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/src/nbody/nbody /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/src/nbody/nbody.bin
++ srec_cat /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/src/nbody/nbody.bin -binary -offset 0x0000 -byte-swap 4 -o /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/src/nbody/nbody.vmem -vmem
+
+Post-process of benchmark "nbody" successful
+nbody
+Compiling nettle-aes from /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/src/nettle-aes/nettle-aes.c to /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/src/nettle-aes/nettle-aes.o
+/home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/src/nettle-aes/nettle-aes.o up to date, skipping compile
+Compilation of benchmark "nettle-aes" successful
+Linking /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/src/nettle-aes
+Binaries to link: nettle-aes.o ,/home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/config/riscv32/chips/speed-test/chipsupport.o ,/home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/config/riscv32/boards/ibex_ss_verilator/boardsupport.o ,/home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/support/main.o ,/home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/support/beebsc.o
+Args to subprocess:
+	- riscv32-unknown-elf-gcc
+	- -O2
+	- -march=rv32imc
+	- -mabi=ilp32
+	- -Wl,-gc-sections
+	- -nostartfiles
+	- -ffreestanding
+	- -T/home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/config/riscv32/boards/ibex_ss_verilator/link.ld
+	- -o
+	- nettle-aes
+	- nettle-aes.o
+	- /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/config/riscv32/chips/speed-test/chipsupport.o
+	- /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/config/riscv32/boards/ibex_ss_verilator/boardsupport.o
+	- /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/support/main.o
+	- /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/support/beebsc.o
+	- /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/config/riscv32/boards/ibex_ss_verilator/crt0.o
+	- /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/config/riscv32/boards/ibex_ss_verilator/simple_system_common.o
+	- -lm
+
+
+Linking of benchmark "nettle-aes" successful
+Post processing /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/src/nettle-aes/nettle-aes
+['/home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/config/riscv32/boards/ibex_ss_verilator/post_process_elf.sh', '/home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/src/nettle-aes/nettle-aes']
+Args to subprocess:
+	- /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/config/riscv32/boards/ibex_ss_verilator/post_process_elf.sh
+	- /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/src/nettle-aes/nettle-aes
+
++ riscv32-unknown-elf-objdump -fhSD /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/src/nettle-aes/nettle-aes
++ riscv32-unknown-elf-objcopy -O binary /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/src/nettle-aes/nettle-aes /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/src/nettle-aes/nettle-aes.bin
++ srec_cat /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/src/nettle-aes/nettle-aes.bin -binary -offset 0x0000 -byte-swap 4 -o /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/src/nettle-aes/nettle-aes.vmem -vmem
+
+Post-process of benchmark "nettle-aes" successful
+nettle-aes
+Compiling nettle-sha256 from /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/src/nettle-sha256/nettle-sha256.c to /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/src/nettle-sha256/nettle-sha256.o
+/home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/src/nettle-sha256/nettle-sha256.o up to date, skipping compile
+Compilation of benchmark "nettle-sha256" successful
+Linking /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/src/nettle-sha256
+Binaries to link: nettle-sha256.o ,/home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/config/riscv32/chips/speed-test/chipsupport.o ,/home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/config/riscv32/boards/ibex_ss_verilator/boardsupport.o ,/home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/support/main.o ,/home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/support/beebsc.o
+Args to subprocess:
+	- riscv32-unknown-elf-gcc
+	- -O2
+	- -march=rv32imc
+	- -mabi=ilp32
+	- -Wl,-gc-sections
+	- -nostartfiles
+	- -ffreestanding
+	- -T/home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/config/riscv32/boards/ibex_ss_verilator/link.ld
+	- -o
+	- nettle-sha256
+	- nettle-sha256.o
+	- /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/config/riscv32/chips/speed-test/chipsupport.o
+	- /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/config/riscv32/boards/ibex_ss_verilator/boardsupport.o
+	- /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/support/main.o
+	- /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/support/beebsc.o
+	- /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/config/riscv32/boards/ibex_ss_verilator/crt0.o
+	- /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/config/riscv32/boards/ibex_ss_verilator/simple_system_common.o
+	- -lm
+
+
+Linking of benchmark "nettle-sha256" successful
+Post processing /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/src/nettle-sha256/nettle-sha256
+['/home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/config/riscv32/boards/ibex_ss_verilator/post_process_elf.sh', '/home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/src/nettle-sha256/nettle-sha256']
+Args to subprocess:
+	- /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/config/riscv32/boards/ibex_ss_verilator/post_process_elf.sh
+	- /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/src/nettle-sha256/nettle-sha256
+
++ riscv32-unknown-elf-objdump -fhSD /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/src/nettle-sha256/nettle-sha256
++ riscv32-unknown-elf-objcopy -O binary /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/src/nettle-sha256/nettle-sha256 /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/src/nettle-sha256/nettle-sha256.bin
++ srec_cat /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/src/nettle-sha256/nettle-sha256.bin -binary -offset 0x0000 -byte-swap 4 -o /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/src/nettle-sha256/nettle-sha256.vmem -vmem
+
+Post-process of benchmark "nettle-sha256" successful
+nettle-sha256
+Compiling libnsichneu from /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/src/nsichneu/libnsichneu.c to /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/src/nsichneu/libnsichneu.o
+/home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/src/nsichneu/libnsichneu.o up to date, skipping compile
+Compilation of benchmark "nsichneu" successful
+Linking /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/src/nsichneu
+Binaries to link: libnsichneu.o ,/home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/config/riscv32/chips/speed-test/chipsupport.o ,/home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/config/riscv32/boards/ibex_ss_verilator/boardsupport.o ,/home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/support/main.o ,/home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/support/beebsc.o
+Args to subprocess:
+	- riscv32-unknown-elf-gcc
+	- -O2
+	- -march=rv32imc
+	- -mabi=ilp32
+	- -Wl,-gc-sections
+	- -nostartfiles
+	- -ffreestanding
+	- -T/home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/config/riscv32/boards/ibex_ss_verilator/link.ld
+	- -o
+	- nsichneu
+	- libnsichneu.o
+	- /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/config/riscv32/chips/speed-test/chipsupport.o
+	- /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/config/riscv32/boards/ibex_ss_verilator/boardsupport.o
+	- /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/support/main.o
+	- /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/support/beebsc.o
+	- /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/config/riscv32/boards/ibex_ss_verilator/crt0.o
+	- /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/config/riscv32/boards/ibex_ss_verilator/simple_system_common.o
+	- -lm
+
+
+Linking of benchmark "nsichneu" successful
+Post processing /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/src/nsichneu/nsichneu
+['/home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/config/riscv32/boards/ibex_ss_verilator/post_process_elf.sh', '/home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/src/nsichneu/nsichneu']
+Args to subprocess:
+	- /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/config/riscv32/boards/ibex_ss_verilator/post_process_elf.sh
+	- /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/src/nsichneu/nsichneu
+
++ riscv32-unknown-elf-objdump -fhSD /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/src/nsichneu/nsichneu
++ riscv32-unknown-elf-objcopy -O binary /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/src/nsichneu/nsichneu /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/src/nsichneu/nsichneu.bin
++ srec_cat /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/src/nsichneu/nsichneu.bin -binary -offset 0x0000 -byte-swap 4 -o /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/src/nsichneu/nsichneu.vmem -vmem
+
+Post-process of benchmark "nsichneu" successful
+nsichneu
+Compiling picojpeg_test from /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/src/picojpeg/picojpeg_test.c to /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/src/picojpeg/picojpeg_test.o
+/home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/src/picojpeg/picojpeg_test.o up to date, skipping compile
+Compiling libpicojpeg from /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/src/picojpeg/libpicojpeg.c to /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/src/picojpeg/libpicojpeg.o
+/home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/src/picojpeg/libpicojpeg.o up to date, skipping compile
+Compilation of benchmark "picojpeg" successful
+Linking /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/src/picojpeg
+Binaries to link: libpicojpeg.o ,picojpeg_test.o ,/home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/config/riscv32/chips/speed-test/chipsupport.o ,/home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/config/riscv32/boards/ibex_ss_verilator/boardsupport.o ,/home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/support/main.o ,/home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/support/beebsc.o
+Args to subprocess:
+	- riscv32-unknown-elf-gcc
+	- -O2
+	- -march=rv32imc
+	- -mabi=ilp32
+	- -Wl,-gc-sections
+	- -nostartfiles
+	- -ffreestanding
+	- -T/home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/config/riscv32/boards/ibex_ss_verilator/link.ld
+	- -o
+	- picojpeg
+	- libpicojpeg.o
+	- picojpeg_test.o
+	- /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/config/riscv32/chips/speed-test/chipsupport.o
+	- /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/config/riscv32/boards/ibex_ss_verilator/boardsupport.o
+	- /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/support/main.o
+	- /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/support/beebsc.o
+	- /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/config/riscv32/boards/ibex_ss_verilator/crt0.o
+	- /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/config/riscv32/boards/ibex_ss_verilator/simple_system_common.o
+	- -lm
+
+
+Linking of benchmark "picojpeg" successful
+Post processing /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/src/picojpeg/picojpeg
+['/home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/config/riscv32/boards/ibex_ss_verilator/post_process_elf.sh', '/home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/src/picojpeg/picojpeg']
+Args to subprocess:
+	- /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/config/riscv32/boards/ibex_ss_verilator/post_process_elf.sh
+	- /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/src/picojpeg/picojpeg
+
++ riscv32-unknown-elf-objdump -fhSD /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/src/picojpeg/picojpeg
++ riscv32-unknown-elf-objcopy -O binary /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/src/picojpeg/picojpeg /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/src/picojpeg/picojpeg.bin
++ srec_cat /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/src/picojpeg/picojpeg.bin -binary -offset 0x0000 -byte-swap 4 -o /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/src/picojpeg/picojpeg.vmem -vmem
+
+Post-process of benchmark "picojpeg" successful
+picojpeg
+Compiling qrframe from /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/src/qrduino/qrframe.c to /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/src/qrduino/qrframe.o
+/home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/src/qrduino/qrframe.o up to date, skipping compile
+Compiling qrencode from /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/src/qrduino/qrencode.c to /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/src/qrduino/qrencode.o
+/home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/src/qrduino/qrencode.o up to date, skipping compile
+Compiling qrtest from /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/src/qrduino/qrtest.c to /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/src/qrduino/qrtest.o
+/home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/src/qrduino/qrtest.o up to date, skipping compile
+Compilation of benchmark "qrduino" successful
+Linking /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/src/qrduino
+Binaries to link: qrtest.o ,qrframe.o ,qrencode.o ,/home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/config/riscv32/chips/speed-test/chipsupport.o ,/home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/config/riscv32/boards/ibex_ss_verilator/boardsupport.o ,/home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/support/main.o ,/home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/support/beebsc.o
+Args to subprocess:
+	- riscv32-unknown-elf-gcc
+	- -O2
+	- -march=rv32imc
+	- -mabi=ilp32
+	- -Wl,-gc-sections
+	- -nostartfiles
+	- -ffreestanding
+	- -T/home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/config/riscv32/boards/ibex_ss_verilator/link.ld
+	- -o
+	- qrduino
+	- qrtest.o
+	- qrframe.o
+	- qrencode.o
+	- /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/config/riscv32/chips/speed-test/chipsupport.o
+	- /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/config/riscv32/boards/ibex_ss_verilator/boardsupport.o
+	- /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/support/main.o
+	- /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/support/beebsc.o
+	- /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/config/riscv32/boards/ibex_ss_verilator/crt0.o
+	- /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/config/riscv32/boards/ibex_ss_verilator/simple_system_common.o
+	- -lm
+
+
+Linking of benchmark "qrduino" successful
+Post processing /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/src/qrduino/qrduino
+['/home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/config/riscv32/boards/ibex_ss_verilator/post_process_elf.sh', '/home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/src/qrduino/qrduino']
+Args to subprocess:
+	- /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/config/riscv32/boards/ibex_ss_verilator/post_process_elf.sh
+	- /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/src/qrduino/qrduino
+
++ riscv32-unknown-elf-objdump -fhSD /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/src/qrduino/qrduino
++ riscv32-unknown-elf-objcopy -O binary /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/src/qrduino/qrduino /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/src/qrduino/qrduino.bin
++ srec_cat /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/src/qrduino/qrduino.bin -binary -offset 0x0000 -byte-swap 4 -o /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/src/qrduino/qrduino.vmem -vmem
+
+Post-process of benchmark "qrduino" successful
+qrduino
+Compiling combined from /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/src/sglib-combined/combined.c to /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/src/sglib-combined/combined.o
+/home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/src/sglib-combined/combined.o up to date, skipping compile
+Compilation of benchmark "sglib-combined" successful
+Linking /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/src/sglib-combined
+Binaries to link: combined.o ,/home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/config/riscv32/chips/speed-test/chipsupport.o ,/home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/config/riscv32/boards/ibex_ss_verilator/boardsupport.o ,/home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/support/main.o ,/home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/support/beebsc.o
+Args to subprocess:
+	- riscv32-unknown-elf-gcc
+	- -O2
+	- -march=rv32imc
+	- -mabi=ilp32
+	- -Wl,-gc-sections
+	- -nostartfiles
+	- -ffreestanding
+	- -T/home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/config/riscv32/boards/ibex_ss_verilator/link.ld
+	- -o
+	- sglib-combined
+	- combined.o
+	- /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/config/riscv32/chips/speed-test/chipsupport.o
+	- /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/config/riscv32/boards/ibex_ss_verilator/boardsupport.o
+	- /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/support/main.o
+	- /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/support/beebsc.o
+	- /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/config/riscv32/boards/ibex_ss_verilator/crt0.o
+	- /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/config/riscv32/boards/ibex_ss_verilator/simple_system_common.o
+	- -lm
+
+
+Linking of benchmark "sglib-combined" successful
+Post processing /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/src/sglib-combined/sglib-combined
+['/home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/config/riscv32/boards/ibex_ss_verilator/post_process_elf.sh', '/home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/src/sglib-combined/sglib-combined']
+Args to subprocess:
+	- /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/config/riscv32/boards/ibex_ss_verilator/post_process_elf.sh
+	- /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/src/sglib-combined/sglib-combined
+
++ riscv32-unknown-elf-objdump -fhSD /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/src/sglib-combined/sglib-combined
++ riscv32-unknown-elf-objcopy -O binary /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/src/sglib-combined/sglib-combined /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/src/sglib-combined/sglib-combined.bin
++ srec_cat /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/src/sglib-combined/sglib-combined.bin -binary -offset 0x0000 -byte-swap 4 -o /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/src/sglib-combined/sglib-combined.vmem -vmem
+
+Post-process of benchmark "sglib-combined" successful
+sglib-combined
+Compiling libslre from /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/src/slre/libslre.c to /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/src/slre/libslre.o
+/home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/src/slre/libslre.o up to date, skipping compile
+Compilation of benchmark "slre" successful
+Linking /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/src/slre
+Binaries to link: libslre.o ,/home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/config/riscv32/chips/speed-test/chipsupport.o ,/home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/config/riscv32/boards/ibex_ss_verilator/boardsupport.o ,/home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/support/main.o ,/home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/support/beebsc.o
+Args to subprocess:
+	- riscv32-unknown-elf-gcc
+	- -O2
+	- -march=rv32imc
+	- -mabi=ilp32
+	- -Wl,-gc-sections
+	- -nostartfiles
+	- -ffreestanding
+	- -T/home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/config/riscv32/boards/ibex_ss_verilator/link.ld
+	- -o
+	- slre
+	- libslre.o
+	- /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/config/riscv32/chips/speed-test/chipsupport.o
+	- /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/config/riscv32/boards/ibex_ss_verilator/boardsupport.o
+	- /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/support/main.o
+	- /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/support/beebsc.o
+	- /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/config/riscv32/boards/ibex_ss_verilator/crt0.o
+	- /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/config/riscv32/boards/ibex_ss_verilator/simple_system_common.o
+	- -lm
+
+
+Linking of benchmark "slre" successful
+Post processing /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/src/slre/slre
+['/home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/config/riscv32/boards/ibex_ss_verilator/post_process_elf.sh', '/home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/src/slre/slre']
+Warning: Post-process of benchmark "slre" failed
+Args to subprocess:
+	- /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/config/riscv32/boards/ibex_ss_verilator/post_process_elf.sh
+	- /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/src/slre/slre
+
++ riscv32-unknown-elf-objdump -fhSD /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/src/slre/slre
++ riscv32-unknown-elf-objcopy -O binary /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/src/slre/slre /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/src/slre/slre.bin
++ srec_cat /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/src/slre/slre.bin -binary -offset 0x0000 -byte-swap 4 -o /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/src/slre/slre.vmem -vmem
+srec_cat:
+    /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/src/slre/slre.vmem:
+    179: The VMem output format uses 32-bit data, but unaligned data is present.
+    Use a "--fill 0xNN --within <input> --range-padding 4" filter to fix this
+    problem.
+
+Compiling libst from /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/src/st/libst.c to /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/src/st/libst.o
+/home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/src/st/libst.o up to date, skipping compile
+Compilation of benchmark "st" successful
+Linking /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/src/st
+Binaries to link: libst.o ,/home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/config/riscv32/chips/speed-test/chipsupport.o ,/home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/config/riscv32/boards/ibex_ss_verilator/boardsupport.o ,/home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/support/main.o ,/home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/support/beebsc.o
+Args to subprocess:
+	- riscv32-unknown-elf-gcc
+	- -O2
+	- -march=rv32imc
+	- -mabi=ilp32
+	- -Wl,-gc-sections
+	- -nostartfiles
+	- -ffreestanding
+	- -T/home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/config/riscv32/boards/ibex_ss_verilator/link.ld
+	- -o
+	- st
+	- libst.o
+	- /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/config/riscv32/chips/speed-test/chipsupport.o
+	- /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/config/riscv32/boards/ibex_ss_verilator/boardsupport.o
+	- /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/support/main.o
+	- /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/support/beebsc.o
+	- /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/config/riscv32/boards/ibex_ss_verilator/crt0.o
+	- /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/config/riscv32/boards/ibex_ss_verilator/simple_system_common.o
+	- -lm
+
+
+Linking of benchmark "st" successful
+Post processing /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/src/st/st
+['/home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/config/riscv32/boards/ibex_ss_verilator/post_process_elf.sh', '/home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/src/st/st']
+Args to subprocess:
+	- /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/config/riscv32/boards/ibex_ss_verilator/post_process_elf.sh
+	- /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/src/st/st
+
++ riscv32-unknown-elf-objdump -fhSD /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/src/st/st
++ riscv32-unknown-elf-objcopy -O binary /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/src/st/st /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/src/st/st.bin
++ srec_cat /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/src/st/st.bin -binary -offset 0x0000 -byte-swap 4 -o /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/src/st/st.vmem -vmem
+
+Post-process of benchmark "st" successful
+st
+Compiling libstatemate from /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/src/statemate/libstatemate.c to /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/src/statemate/libstatemate.o
+/home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/src/statemate/libstatemate.o up to date, skipping compile
+Compilation of benchmark "statemate" successful
+Linking /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/src/statemate
+Binaries to link: libstatemate.o ,/home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/config/riscv32/chips/speed-test/chipsupport.o ,/home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/config/riscv32/boards/ibex_ss_verilator/boardsupport.o ,/home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/support/main.o ,/home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/support/beebsc.o
+Args to subprocess:
+	- riscv32-unknown-elf-gcc
+	- -O2
+	- -march=rv32imc
+	- -mabi=ilp32
+	- -Wl,-gc-sections
+	- -nostartfiles
+	- -ffreestanding
+	- -T/home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/config/riscv32/boards/ibex_ss_verilator/link.ld
+	- -o
+	- statemate
+	- libstatemate.o
+	- /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/config/riscv32/chips/speed-test/chipsupport.o
+	- /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/config/riscv32/boards/ibex_ss_verilator/boardsupport.o
+	- /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/support/main.o
+	- /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/support/beebsc.o
+	- /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/config/riscv32/boards/ibex_ss_verilator/crt0.o
+	- /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/config/riscv32/boards/ibex_ss_verilator/simple_system_common.o
+	- -lm
+
+
+Linking of benchmark "statemate" successful
+Post processing /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/src/statemate/statemate
+['/home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/config/riscv32/boards/ibex_ss_verilator/post_process_elf.sh', '/home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/src/statemate/statemate']
+Args to subprocess:
+	- /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/config/riscv32/boards/ibex_ss_verilator/post_process_elf.sh
+	- /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/src/statemate/statemate
+
++ riscv32-unknown-elf-objdump -fhSD /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/src/statemate/statemate
++ riscv32-unknown-elf-objcopy -O binary /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/src/statemate/statemate /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/src/statemate/statemate.bin
++ srec_cat /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/src/statemate/statemate.bin -binary -offset 0x0000 -byte-swap 4 -o /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/src/statemate/statemate.vmem -vmem
+
+Post-process of benchmark "statemate" successful
+statemate
+Compiling libud from /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/src/ud/libud.c to /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/src/ud/libud.o
+/home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/src/ud/libud.o up to date, skipping compile
+Compilation of benchmark "ud" successful
+Linking /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/src/ud
+Binaries to link: libud.o ,/home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/config/riscv32/chips/speed-test/chipsupport.o ,/home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/config/riscv32/boards/ibex_ss_verilator/boardsupport.o ,/home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/support/main.o ,/home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/support/beebsc.o
+Args to subprocess:
+	- riscv32-unknown-elf-gcc
+	- -O2
+	- -march=rv32imc
+	- -mabi=ilp32
+	- -Wl,-gc-sections
+	- -nostartfiles
+	- -ffreestanding
+	- -T/home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/config/riscv32/boards/ibex_ss_verilator/link.ld
+	- -o
+	- ud
+	- libud.o
+	- /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/config/riscv32/chips/speed-test/chipsupport.o
+	- /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/config/riscv32/boards/ibex_ss_verilator/boardsupport.o
+	- /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/support/main.o
+	- /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/support/beebsc.o
+	- /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/config/riscv32/boards/ibex_ss_verilator/crt0.o
+	- /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/config/riscv32/boards/ibex_ss_verilator/simple_system_common.o
+	- -lm
+
+
+Linking of benchmark "ud" successful
+Post processing /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/src/ud/ud
+['/home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/config/riscv32/boards/ibex_ss_verilator/post_process_elf.sh', '/home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/src/ud/ud']
+Args to subprocess:
+	- /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/config/riscv32/boards/ibex_ss_verilator/post_process_elf.sh
+	- /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/src/ud/ud
+
++ riscv32-unknown-elf-objdump -fhSD /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/src/ud/ud
++ riscv32-unknown-elf-objcopy -O binary /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/src/ud/ud /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/src/ud/ud.bin
++ srec_cat /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/src/ud/ud.bin -binary -offset 0x0000 -byte-swap 4 -o /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/src/ud/ud.vmem -vmem
+
+Post-process of benchmark "ud" successful
+ud
+Compiling libwikisort from /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/src/wikisort/libwikisort.c to /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/src/wikisort/libwikisort.o
+/home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/src/wikisort/libwikisort.o up to date, skipping compile
+Compilation of benchmark "wikisort" successful
+Linking /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/src/wikisort
+Binaries to link: libwikisort.o ,/home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/config/riscv32/chips/speed-test/chipsupport.o ,/home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/config/riscv32/boards/ibex_ss_verilator/boardsupport.o ,/home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/support/main.o ,/home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/support/beebsc.o
+Args to subprocess:
+	- riscv32-unknown-elf-gcc
+	- -O2
+	- -march=rv32imc
+	- -mabi=ilp32
+	- -Wl,-gc-sections
+	- -nostartfiles
+	- -ffreestanding
+	- -T/home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/config/riscv32/boards/ibex_ss_verilator/link.ld
+	- -o
+	- wikisort
+	- libwikisort.o
+	- /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/config/riscv32/chips/speed-test/chipsupport.o
+	- /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/config/riscv32/boards/ibex_ss_verilator/boardsupport.o
+	- /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/support/main.o
+	- /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/support/beebsc.o
+	- /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/config/riscv32/boards/ibex_ss_verilator/crt0.o
+	- /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/config/riscv32/boards/ibex_ss_verilator/simple_system_common.o
+	- -lm
+
+
+Linking of benchmark "wikisort" successful
+Post processing /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/src/wikisort/wikisort
+['/home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/config/riscv32/boards/ibex_ss_verilator/post_process_elf.sh', '/home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/src/wikisort/wikisort']
+Args to subprocess:
+	- /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/config/riscv32/boards/ibex_ss_verilator/post_process_elf.sh
+	- /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/src/wikisort/wikisort
+
++ riscv32-unknown-elf-objdump -fhSD /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/src/wikisort/wikisort
++ riscv32-unknown-elf-objcopy -O binary /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/src/wikisort/wikisort /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/src/wikisort/wikisort.bin
++ srec_cat /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/src/wikisort/wikisort.bin -binary -offset 0x0000 -byte-swap 4 -o /home/greg/work/ibex_area/ibex/examples/sw/benchmarks/embench-iot/bd/src/wikisort/wikisort.vmem -vmem
+
+Post-process of benchmark "wikisort" successful
+wikisort
