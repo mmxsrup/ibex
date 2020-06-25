@@ -14,6 +14,7 @@ filesets:
       - lowrisc:prim:all
       - lowrisc:ibex:ibex_pkg
       - lowrisc:ibex:ibex_icache
+      - lowrisc:gift:gift_pkg
     files:
       - rtl/ibex_alu.sv
       - rtl/ibex_compressed_decoder.sv
@@ -39,7 +40,10 @@ filesets:
       - rtl/ibex_register_file_ff.sv # generic FF-based
       - rtl/ibex_core.sv
       - rtl/ibex_pointer_authentication.sv
-      - rtl/ibex_cipher.sv
+      - rtl/gift.sv
+      - rtl/gift_middle_rounds.sv
+      - rtl/gift_round.sv
+      - rtl/gift_update_key.sv
     file_type: systemVerilogSource
 
   files_lint:
