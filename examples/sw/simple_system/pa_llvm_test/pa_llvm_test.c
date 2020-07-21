@@ -10,7 +10,7 @@ int foo(int x) {
 }
 
 int crash(int x) {
-  puts("Crash fucntion\n");
+  puts("Crash function\n");
   volatile char buf[16];
   for (int i = 0; i < 32; ++i) { // <- Bug
     buf[i] = 'A';
