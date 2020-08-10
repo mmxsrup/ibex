@@ -159,6 +159,44 @@ secs_ret time_in_secs(CORE_TICKS ticks) {
 
 ee_u32 default_num_contexts = 1;
 
+#if POINTER_AUTHENTICATION
+#define PMP_NAPOT 0x18
+#define PMP_R 0x01
+#define PMP_W 0x02
+#define PMP_X 0x04
+
+#define MSTATUS_MPP_M (3 << 11)
+#define MSTATUS_MPP_U (0 << 11)
+
+void setup_pakey() {
+  // Set the key for PA in CSR
+  uint32_t key = 0xdeadbeef;
+  asm volatile(
+      "csrw 0x7c2, %[key];"
+      "csrw 0x7c3, %[key];"
+      "csrw 0x7c4, %[key];"
+      "csrw 0x7c5, %[key];"
+      :
+      : [key] "r"(key)
+      :);
+}
+
+void setup_pmp() {
+  // 0x00000000 ~ 0x0FFFFFFF is accessible
+  uint32_t base_addr = 0x0;
+  uint32_t size = 1 << 30;
+  uint32_t napot_size = (size / 2) - 1;
+  uint32_t pmpaddr = (base_addr + napot_size) >> 2;
+  uint32_t pmpcfg = PMP_NAPOT | PMP_R | PMP_W | PMP_X;
+  asm volatile(
+      "csrw pmpaddr0, %0;"
+      "csrw pmpcfg0, %1;"
+      :
+      : "r"(pmpaddr), "r"(pmpcfg)
+      :);
+}
+#endif
+
 /* Function : portable_init
         Target specific initialization code
         Test for some common mistakes.
@@ -179,6 +217,11 @@ void portable_init(core_portable *p, int *argc, char *argv[]) {
 */
 void portable_fini(core_portable *p) {
   dump_pcounts();
+
+#if POINTER_AUTHENTICATION
+  setup_pakey();
+  setup_pmp();
+#endif
 
   CORE_TICKS elapsed = get_time();
   float coremark_mhz;

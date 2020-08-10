@@ -174,6 +174,17 @@ typedef ee_u32 CORE_TICKS;
 #define MAIN_HAS_NORETURN 0
 #endif
 
+/* Configuration : POINTER_AUTHENTICATION
+        Decide whether to set up for pointer authentication
+
+        Valid values :
+        0 - Disable setup for pointer authentication
+        1 - Enable setup for pointer authentication
+*/
+#ifndef POINTER_AUTHENTICATION
+#define POINTER_AUTHENTICATION 1
+#endif
+
 /* Variable : default_num_contexts
         Not used for this simple port, must cintain the value 1.
 */
