@@ -164,10 +164,14 @@ ee_u32 default_num_contexts = 1;
 #define PMP_R 0x01
 #define PMP_W 0x02
 #define PMP_X 0x04
+#define PMP_L 0x80
 
 #define MSTATUS_MPP_M (3 << 11)
 #define MSTATUS_MPP_U (0 << 11)
 
+/* Function : setup_pakey
+        Set key for pointer authentication in CSR.
+*/
 void setup_pakey() {
   // Set the key for PA in CSR
   uint32_t key = 0xdeadbeef;
@@ -181,13 +185,17 @@ void setup_pakey() {
       :);
 }
 
+/* Function : setup_pmp
+        Set PMP for pointer authentication.
+
+*/
 void setup_pmp() {
-  // 0x00000000 ~ 0x0FFFFFFF is accessible
-  uint32_t base_addr = 0x0;
+  // 0xA0000000 ~ 0xAFFFFFFF is not accessible
+  uint32_t base_addr = 0xA0000000;
   uint32_t size = 1 << 30;
   uint32_t napot_size = (size / 2) - 1;
   uint32_t pmpaddr = (base_addr + napot_size) >> 2;
-  uint32_t pmpcfg = PMP_NAPOT | PMP_R | PMP_W | PMP_X;
+  uint32_t pmpcfg = PMP_NAPOT | PMP_L;
   asm volatile(
       "csrw pmpaddr0, %0;"
       "csrw pmpcfg0, %1;"
@@ -211,17 +219,17 @@ void portable_init(core_portable *p, int *argc, char *argv[]) {
     ee_printf("ERROR! Please define ee_u32 to a 32b unsigned type!\n");
   }
   p->portable_id = 1;
+
+#if POINTER_AUTHENTICATION
+  setup_pakey();
+  setup_pmp();
+#endif
 }
 /* Function : portable_fini
         Target specific final code
 */
 void portable_fini(core_portable *p) {
   dump_pcounts();
-
-#if POINTER_AUTHENTICATION
-  setup_pakey();
-  setup_pmp();
-#endif
 
   CORE_TICKS elapsed = get_time();
   float coremark_mhz;
