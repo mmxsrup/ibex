@@ -274,8 +274,6 @@ def populate_user_commands(conf, args):
 def populate_user_flags(conf, args):
     """Populate a dictionary of configuration flag parameters, "conf", from
        values supplied on the command line in the structure, "args"."""
-    conf = {}
-
     if args.cflags:
         conf['cflags'] = args.cflags.split(sep=' ')
     if args.ldflags:
@@ -287,8 +285,6 @@ def populate_user_flags(conf, args):
 def populate_user_patterns(conf, args):
     """Populate a dictionary of configuration pattern parameters, "conf", from
        values supplied on the command line in the structure, "args"."""
-    conf = {}
-
     if args.cc_define1_pattern:
         conf['cc_define1_pattern'] = args.cc_define1_pattern
     if args.cc_define2_pattern:
@@ -310,8 +306,6 @@ def populate_user_patterns(conf, args):
 def populate_user_libs(conf, args):
     """Populate a dictionary of configuration library parameters, "conf", from
        values supplied on the command line in the structure, "args"."""
-    conf = {}
-
     if args.user_libs:
         conf['user_libs'] = args.user_libs.split(sep=' ')
     if args.dummy_libs:
@@ -323,8 +317,6 @@ def populate_user_libs(conf, args):
 def populate_user_defs(conf, args):
     """Populate a dictionary of configuration definition parameters, "conf", from
        values supplied on the command line in the structure, "args"."""
-    conf = {}
-
     if args.cpu_mhz:
         conf['cpu_mhz'] = args.cpu_mhz
     if args.warmup_heat:
